@@ -39,3 +39,7 @@ cc ft_column.c && ./a.out
 
 1. Обработать двойной пробел.
 2. Добавить параметры.
+
+## Дополнительно
+
+[table](https://unix.stackexchange.com/questions/256739/how-do-i-properly-align-multi-column-text-file)
