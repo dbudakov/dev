@@ -20,7 +20,7 @@ cc ft_column.c && ./a.out
 #define NUM_COLUMN 3
 ```
 
-Вывод будет на stdin
+Вывод будет на **stdin**
 
 ## Алгоритм
 
