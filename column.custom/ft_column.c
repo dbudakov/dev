@@ -142,8 +142,8 @@ int *get_max_val_arr(int **arr_pre, int num_str, int num_max_word)
 	}
 	i = num_str - 1;
 	while(i >= 0)
-		// free(arr_pre[i--]);
-	// free(arr_pre);
+		free(arr_pre[i--]);
+	free(arr_pre);
 	return arr_res;
 }
 
@@ -194,8 +194,8 @@ void ft_column_output(int *arr_res,int num_column, char *str_file, int num_max_w
 		}
 		i++;
 	}
-	// free(arr_res);
-	// free(str);
+	free(arr_res);
+	free(str);
 }
 
 int *get_max_val_field(char *str_file, int num_column)
@@ -254,6 +254,6 @@ int main(int argc, char **argv)
 	len = get_len_file(fd);
 	str_file = file_to_str(fd, len);
 	arr = get_max_val_field(str_file, num_column);
-	// free(str_file);
+	free(str_file);
 	close(fd);
 }
