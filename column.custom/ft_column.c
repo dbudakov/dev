@@ -58,8 +58,12 @@ int get_max_word(char *str_file)
 	{
 		while (str_file[i] != '\n')
 		{
-			if (str_file[i] == ' ')
+			if (str_file[i] == SYMBOL)
+			{
+				while (str_file[i] == SYMBOL)
+					i++;
 				n++;
+			}
 			i++;
 		}
 		if (str_file[i] == '\n')
@@ -93,14 +97,15 @@ int **get_arr_pre(char *str_file, int num_str, int num_max_word)
 	i = 0;
 	while(str_file[i] != '\0')
 	{
-		if (str_file[i] == SYMBOL || str_file[i] == '\n')
+		if (s != 0 && (str_file[i] == SYMBOL || str_file[i] == '\n'))
 		{
 			arr_pre[j][k++] = s;
 			s = 0;
 			if (str_file[i] != '\n')
 				i++;
 		}
-		s++;
+		if (str_file[i] != SYMBOL)
+			s++;
 		if (str_file[i] == '\n')
 		{
 			s = 0;
@@ -108,7 +113,6 @@ int **get_arr_pre(char *str_file, int num_str, int num_max_word)
 			j++;
 		}
 		i++;
-
 	}
 	return arr_pre;
 }
@@ -168,24 +172,27 @@ void ft_column_output(int *arr_res,int num_column, char *str_file, int num_max_w
 		exit(1);
 	while(str_file[i] != '\0')
 	{
-		while (str_file[i] != SYMBOL && str_file[i] != '\n' && str_file[i] != '\0')
-			str[n++] = str_file[i++];
-		str[n] = '\0';
-		n = 0;
-		if (j < num_column)
+		if (str_file[i] != SYMBOL)
 		{
-			if (NEGATIVE)
-				printf("%-*s ", arr_res[j], str);
+			while (str_file[i] != SYMBOL && str_file[i] != '\n' && str_file[i] != '\0')
+				str[n++] = str_file[i++];
+			str[n] = '\0';
+			n = 0;
+			if (j < num_column)
+			{
+				if (NEGATIVE)
+					printf("%-*s ", arr_res[j], str);
+				else
+					printf("%*s ", arr_res[j], str);
+			}
 			else
-				printf("%*s ", arr_res[j], str);
-		}
-		else
-			printf("%s ", str);
-		j++;
-		if (str_file[i] == '\n')
-		{
-			printf("\n");
-			j = 0;
+				printf("%s ", str);
+			j++;
+			if (str_file[i] == '\n')
+			{
+				printf("\n");
+				j = 0;
+			}
 		}
 		i++;
 	}

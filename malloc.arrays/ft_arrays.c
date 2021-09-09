@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-// malloc для указателя выделяет минимум 24(32 байта, 8 адресов), слудующий 40(64 байла, 16 адреса), след 57(80 байлаб, 20 адресов)
+// malloc для указателя выделяет минимум 24(32 байта, 8 адресов), слeдующий 40(64 байла, 16 адресов), след 57(80 байт, 20 адресов)
 int main()
 {
 	int *one;
@@ -73,15 +73,15 @@ int main()
 	printf("\n");
 	printf("%p\n", &two);
 	printf("%.2d: %p,%d %p,%d\n",  0, &two[0][0], two[0][0], &two[1][0], two[1][0]);
-	printf("%.2d: %p,%d %p,%d\n",  2, &two[0][1], two[0][1], &two[1][1], two[1][1]);
-	printf("%.2d: %p,%d %p,%d\n",  3, &two[0][2], two[0][2], &two[1][2], two[1][2]);
-	printf("%.2d: %p,%d %p,%d\n",  4, &two[0][3], two[0][3], &two[1][3], two[1][3]);
-	printf("%.2d: %p,%d %p,%d\n",  5, &two[0][4], two[0][4], &two[1][4], two[1][4]);
-	printf("%.2d: %p,%d %p,%d\n",  6, &two[0][5], two[0][5], &two[1][5], two[1][5]);
-	printf("%.2d: %p,%d %p,%d\n",  7, &two[0][6], two[0][6], &two[1][6], two[1][6]);
-	printf("%.2d: %p,%d %p,%d\n",  8, &two[0][7], two[0][7], &two[1][7], two[1][7]);
-	printf("%.2d: %p,%d %p,%d\n",  9, &two[0][8], two[0][8], &two[1][8], two[1][8]);
-	printf("%.2d: %p,%d %p,%d\n", 10, &two[0][9], two[0][9], &two[1][9], two[1][9]);
+	printf("%.2d: %p,%d %p,%d\n",  1, &two[0][1], two[0][1], &two[1][1], two[1][1]);
+	printf("%.2d: %p,%d %p,%d\n",  2, &two[0][2], two[0][2], &two[1][2], two[1][2]);
+	printf("%.2d: %p,%d %p,%d\n",  3, &two[0][3], two[0][3], &two[1][3], two[1][3]);
+	printf("%.2d: %p,%d %p,%d\n",  4, &two[0][4], two[0][4], &two[1][4], two[1][4]);
+	printf("%.2d: %p,%d %p,%d\n",  5, &two[0][5], two[0][5], &two[1][5], two[1][5]);
+	printf("%.2d: %p,%d %p,%d\n",  6, &two[0][6], two[0][6], &two[1][6], two[1][6]);
+	printf("%.2d: %p,%d %p,%d\n",  7, &two[0][7], two[0][7], &two[1][7], two[1][7]);
+	printf("%.2d: %p,%d %p,%d\n",  8, &two[0][8], two[0][8], &two[1][8], two[1][8]);
+	printf("%.2d: %p,%d %p,%d\n",  9, &two[0][9], two[0][9], &two[1][9], two[1][9]);
 	// printf("%p %p\n", &two[0][7], &two[1][7]);
 	// printf("%p %p\n", &two[0][7], &two[1][7]);
 	// printf("%p\n", &three);
